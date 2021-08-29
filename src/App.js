@@ -33,20 +33,20 @@ function App() {
     axios
       .post("https://gamadesafiobackend.herokuapp.com/register", state)
       .then((data) => {
-        if (data.status == 200) {
+        if (data.status === 200) {
           alert.success("Cadastro realizado com sucesso");
           setState(emptyState);
         }
       })
       .catch((err) => {
-        if (err.response.status == 400) {
+        if (err.response.status === 400) {
           const errors = err.response.data.errors;
           errors.forEach((item) => {
             alert.error(item.msg);
           });
         }
 
-        if (err.response.status == 500) {
+        if (err.response.status === 500) {
           alert.error("Falha ao realizar cadastro, por favor verifique");
         }
       });

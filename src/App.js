@@ -31,7 +31,7 @@ function App() {
   const onSubmit = async (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:5000/register", state)
+      .post("https://gamadesafiobackend.herokuapp.com/register", state)
       .then((data) => {
         if (data.status == 200) {
           alert.success("Cadastro realizado com sucesso");
@@ -128,10 +128,14 @@ function App() {
                 value={state.estadoCivil}
               >
                 <option value=""></option>
-                <option label="Trocar">Trocar</option>
-                <option label="Trocar">Trocar</option>
-                <option label="trocaaar">Trocar</option>
-                <option label="essetambem">Trocar</option>
+                <option label="Solteiro(a)">solteiro</option>
+                <option label="Casado(a)">casado</option>
+                <option label="Separado(a)">separado</option>
+                <option label="Divorciado(a)">divorciado</option>
+                <option label="Viúvo(a)">viúvo</option>
+                <option label="Prefiro não responder">
+                  Prefiro não responder
+                </option>
               </select>
             </div>
             <div>
@@ -146,6 +150,9 @@ function App() {
                 <option label="Maculino">Masculino</option>
                 <option label="Feminino">Feminino</option>
                 <option label="Não especificado">Não Especificado</option>
+                <option label="Prefiro não responder">
+                  Prefiro não responder
+                </option>
               </select>
             </div>
           </div>
